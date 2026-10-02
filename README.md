@@ -1,6 +1,6 @@
 # 📚 Biblioteca Digital
 
-![Status do Projeto](https://img.shields.io/badge/Status-Em_Desenvolvimento-green)
+![Status do Projeto](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen)
 ![Tecnologias](https://img.shields.io/badge/Tecnologias-HTML5_|_CSS3_|_JavaScript-blue)
 
 ## 📖 Sobre o Projeto
