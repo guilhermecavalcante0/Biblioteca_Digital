@@ -7,7 +7,7 @@
 
 A **Biblioteca Digital** é uma plataforma focada na troca, venda e empréstimo de livros, histórias em quadrinhos (HQs) e mangás baseada em **geolocalização**. 
 
-O objetivo principal do projeto é conectar leitores da mesma região, permitindo que cadastrem seus acervos pessoais e interajam com vizinhos do mesmo bairro. Além de facilitar o acesso a novas leituras, a plataforma visa incentivar a criação de **clubes de leitura comunitários**, promovendo a cultura e a interação local.
+O objetivo principal do projeto é conectar leitores da mesma região, permitindo que cadastrem seus acervos pessoais e interajam com vizinhos do mesmo bairro. Além de facilitar o acesso a novas leituras, a plataforma visa incentivar a criação de **clubes de leitura comunitários**, promovendo a cultura e a interação. 
 
 ---
 
