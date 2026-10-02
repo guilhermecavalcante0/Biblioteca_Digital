@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookSpace</title>
+
+    <!-- Ligação para o ficheiro CSS externo -->
+    <link rel="stylesheet" href="home.css">
+    
+</head>
+
+<body>
+    <header>
+
+        <div class="logo-container">
+            <img src="/public/images/logo.jpeg" alt="Logotipo BookSpace" class="logo-img">
+            <h1>BookSpace</h1>
+        </div>
+
+        <nav>
+            <a href="/src/pages/HOME/home.html">Início</a>
+            <a href="#meuAcervoSecao">Meu Acervo</a>
+            <a href="#" id="linkAddObra">Adicionar Obra</a>
+            <a href="/index.html">Sair</a>
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="boas-vindas">
+            <h2>Bem Vindo(a)!</h2>
+            <p>Encontre livros, HQs e mangás perto de você.</p>
+            <input type="text" placeholder="Pesquisar uma obra...">
+        </section>
+
+        <section class="obras">
+            <h2>Obras disponíveis perto de você</h2>
+            <div class="livros">
+                <div class="livro">
+                    <div class="capa"><img src="/public/images/Hobbit.webp" alt="Capa"></div>
+                    <h3>O Hobbit</h3>
+                    <p>J. R. R. Tolkien</p>
+                    <span class="livro-local">📍 2 km de distância</span>
+                    <button>Ver detalhes</button>
+                </div>
+                <div class="livro">
+                    <div class="capa"><img src="/public/images/One_piece1.webp" alt="Capa"></div>
+                    <h3>One Piece #01</h3>
+                    <p>Eiichiro Oda</p>
+                    <span class="livro-local">📍 3 km de distância</span>
+                    <button>Ver detalhes</button>
+                </div>
+                <div class="livro">
+                    <div class="capa"><img src="/public/images/Percy_jackson.webp" alt="Capa"></div>
+                    <h3>Percy Jackson</h3>
+                    <p>Rick Riordan</p>
+                    <span class="livro-local">📍 5 km de distância</span>
+                    <button>Ver detalhes</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="meu-acervo" id="meuAcervoSecao">
+            <h2>Meu acervo</h2>
+            <p id="mensagemVazio">Você ainda não adicionou nenhuma obra.</p>
+            <div id="acervoLista"></div>
+            <button id="btnAdicionarObra">Adicionar obra</button>
+        </section>
+    </main>
+
+    <!-- MODAL ADICIONAR OBRA -->
+    <div id="modalAdicionar" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal" id="fecharModalAdd">&times;</span>
+            <h2>Adicionar Nova Obra</h2>
+            <form id="formAdicionarObra">
+                <label for="tituloObra">Título:</label>
+                <input type="text" id="tituloObra" placeholder="Ex: O Senhor dos Anéis" required>
+
+                <label for="autorObra">Autor:</label>
+                <input type="text" id="autorObra" placeholder="Ex: J. R. R. Tolkien" required>
+
+                <label for="capaObra">URL da Capa (Imagem):</label>
+                <input type="url" id="capaObra" placeholder="https://via.placeholder.com/300" required>
+
+                <label for="localObra">Localização:</label>
+                <input type="text" id="localObra" placeholder="Ex: Centro, Fortaleza" required>
+
+                <label for="contatoObra">Contacto (WhatsApp/Email):</label>
+                <input type="text" id="contatoObra" placeholder="Ex: (85) 99999-9999" required>
+
+                <button type="submit">Salvar Obra no Acervo</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR OBRA -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal" id="fecharModalEdit">&times;</span>
+            <h2>Editar Obra</h2>
+            <form id="formEditarObra">
+                <label for="editTituloObra">Título:</label>
+                <input type="text" id="editTituloObra" required>
+
+                <label for="editAutorObra">Autor:</label>
+                <input type="text" id="editAutorObra" required>
+
+                <label for="editCapaObra">URL da Capa (Imagem):</label>
+                <input type="url" id="editCapaObra" required>
+
+                <label for="editLocalObra">Localização:</label>
+                <input type="text" id="editLocalObra" required>
+
+                <label for="editContatoObra">Contacto (WhatsApp/Email):</label>
+                <input type="text" id="editContatoObra" required>
+
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL VER DETALHES E CHAT -->
+    <div id="modalDetalhes" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal" id="fecharModalDetalhes">&times;</span>
+    
+            <h2 id="detalheTitulo" style="color: var(--cor-primaria); margin-bottom: 5px;">Título da Obra</h2>
+            <p style="margin-bottom: 5px;"><strong>Autor:</strong> <span id="detalheAutor"></span></p>
+            <p style="margin-bottom: 5px;"><strong>Localização:</strong> <span id="detalheLocal"></span></p>
+            <p style="margin-bottom: 20px;"><strong>Contacto:</strong> <span id="detalheContato"></span></p>
+
+            <hr style="border: 0; border-top: 1px solid #ddd; margin-bottom: 15px;">
+
+            <h3 style="font-size: 16px; margin-bottom: 10px;">Conversar com o anunciante</h3>
+            
+            <!-- Interface do Chat -->
+            <div class="chat-container">
+                <div class="chat-mensagens" id="chatMensagens">
+                    <div class="mensagem recebida">
+                        Olá! Vi que tem interesse nesta obra. Como posso ajudar?
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Escreva a sua mensagem aqui...">
+                    <button id="btnEnviarMensagem">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>BookSpace © 2026</p>
+    </footer>
+
+    <!-- Ligação para o ficheiro JavaScript externo -->
+    <script src="home.js"></script>
+
+</body>
+
+</html>

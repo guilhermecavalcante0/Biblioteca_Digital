@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BookSpace</title>
+
+    <!-- Ligação para o ficheiro CSS -->
+    <link rel="stylesheet" href="/src/pages/LOGIN/login.css">
+
+</head>
+
+<body>
+
+    <div class="fundo">
+        <div class="circulo circulo_um"></div>
+        <div class="circulo circulo_dois"></div>
+    </div>
+
+    <main class="caixa_login">
+
+        <!-- O quadrado laranja com a imagem dentro -->
+        <div class="logo">
+    
+            <img src="/public/images/logo.jpeg" alt="Logotipo BookSpace">
+        </div>
+
+        <h1>BookSpace</h1>
+        <p class="subtitulo">Entre na sua conta para continuar</p>
+
+        
+        <form action="/src/pages/HOME/home.html">
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+            </div>
+
+            <!-- Campo de Senha com o Olhinho -->
+            <div class="campo" style="position: relative;">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha" required>
+                
+                <!-- Botão Olhinho (SVG) -->
+                <button type="button" id="btnMostrarSenha" class="btn-olho" aria-label="Mostrar senha">
+                    <svg id="iconeOlho" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="opcoes">
+                <label class="lembrar">
+                    <input type="checkbox">
+                    Lembrar de mim
+                </label>
+                <a href="#" class="esqueci" id="linkEsqueciSenha">Esqueci a senha</a>
+            </div>
+
+            <button type="submit" class="botao_entrar">Entrar</button>
+        </form>
+
+        <p class="cadastro">
+            Ainda não possui uma conta?
+            <a href="/src/pages/CADASTRO/cadastro.html">Criar conta</a>
+        </p>
+
+    </main>
+
+    <!-- MODAL ESQUECI A SENHA -->
+    <div id="modalEsqueciSenha" class="modal-login">
+        <div class="modal-login-conteudo">
+            <span class="fechar-modal-login" id="fecharModalEsqueci">&times;</span>
+            <h2>Recuperar Senha</h2>
+            <p class="subtitulo-modal">Digite o seu e-mail abaixo e enviaremos um link de recuperação.</p>
+            
+            <form id="formRecuperarSenha">
+                <div class="campo">
+                    <label for="emailRecuperacao">E-mail cadastrado</label>
+                    <input type="email" id="emailRecuperacao" placeholder="seu@email.com" required>
+                </div>
+                <button type="submit" class="botao_entrar">Enviar Link</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ligação para o ficheiro JavaScript externo -->
+    <script src="/src/pages/LOGIN/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - BookSpace</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+    <div class="fundo">
+        <div class="circulo circulo_um"></div>
+        <div class="circulo circulo_dois"></div>
+    </div>
+
+    <main class="caixa_cadastro">
+
+        <div class="logo">
+            <img src="/public/images/logo.jpeg" alt="Logotipo BookSpace">
+        </div>
+
+        <h1>BookSpace</h1>
+        <p class="subtitulo">Preencha seus dados para começar</p>
+
+        <form id="formCadastro" action="/index.html">
+            <div class="campo">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+            </div>
+
+            <!-- Campo de Senha 1 -->
+            <div class="campo" style="position: relative;">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Crie uma senha" required>
+                <button type="button" id="btnMostrarSenha1" class="btn-olho" aria-label="Mostrar senha">
+                    <svg class="iconeOlho" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Campo de Senha 2 (Confirmar) -->
+            <div class="campo" style="position: relative;">
+                <label for="confirmar_senha">Confirmar senha</label>
+                <input type="password" id="confirmar_senha" placeholder="Digite a senha novamente" required>
+                <button type="button" id="btnMostrarSenha2" class="btn-olho" aria-label="Mostrar senha">
+                    <svg class="iconeOlho" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+                <p id="erroSenha" class="mensagem-erro-senha">As senhas não coincidem.</p>
+            </div>
+
+            <label class="termos">
+                <input type="checkbox" required>
+                <span>
+                    Eu concordo com os
+                    <a id="linkTermos">termos de uso e a política de privacidade</a>.
+                </span>
+            </label>
+
+            <button type="submit" class="botao_cadastrar">Criar conta</button>
+        </form>
+
+        <p class="voltar_login">
+            Já possui uma conta?
+            <a href="/index.html">Entrar</a>
+        </p>
+
+    </main>
+
+    <!-- MODAL TERMOS DE USO E POLÍTICA -->
+    <div id="modalTermos" class="modal-termos">
+        <div class="modal-termos-conteudo">
+            <span class="fechar-modal-termos" id="fecharModalTermos">&times;</span>
+            <h2>Termos de Uso e Privacidade</h2>
+            
+            <p><strong>1. Uso da Plataforma:</strong> O BookSpace é uma plataforma destinada a facilitar a troca, empréstimo e venda de livros entre utilizadores próximos. Não nos responsabilizamos pelas negociações feitas fora do chat oficial.</p>
+            
+            <p><strong>2. Privacidade:</strong> A sua localização exata nunca será partilhada. Apenas uma distância aproximada será exibida para os outros utilizadores.</p>
+            
+            <p><strong>3. Regras de Conduta:</strong> Respeite os outros membros da comunidade. Perfis com denúncias de comportamentos inadequados poderão ser banidos da plataforma.</p>
+            
+            <p><strong>4. Tratamento de Dados:</strong> O seu e-mail e informações de contacto são guardados com segurança e não serão vendidos a terceiros.</p>
+        </div>
+    </div>
+
+    <!-- Ligação para o ficheiro JavaScript externo -->
+    <script src="cadastro.js"></script>
+
+</body>
+</html>
